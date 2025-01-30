@@ -1,31 +1,32 @@
-BEGIN;
+-- cria
 
--- criacao das tabelas
+BEGIN;
 
 CREATE TABLE Estudante (
     Id SERIAL PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,
     Foto BYTEA,
     Matricula VARCHAR(20) NOT NULL UNIQUE,
-    Curso VARCHAR(50),
+    Curso VARCHAR(100),
     Email VARCHAR(255),
     Telefone VARCHAR(15)
 );
 
 CREATE INDEX MATRICULA_IDX ON Estudante (Matricula);
-    CREATE TABLE Armario (
+
+CREATE TABLE Armario (
     Id SERIAL PRIMARY KEY,
-    Localizacao VARCHAR(50) NOT NULL,
+    Localizacao VARCHAR(100) NOT NULL,
     Status BOOLEAN NOT NULL DEFAULT TRUE
 );
 
 CREATE TABLE Computador (
     Id SERIAL PRIMARY KEY,
-    Modelo VARCHAR(50) NOT NULL,
-    Localizacao VARCHAR(50) NOT NULL,
+    Modelo VARCHAR(100) NOT NULL,
+    Localizacao VARCHAR(100) NOT NULL,
     Status BOOLEAN NOT NULL DEFAULT TRUE,
     MotivoIndisponibilidade TEXT,
-    Tipo VARCHAR(20)
+    Tipo VARCHAR(50)
 );
 
 CREATE TABLE Supervisor (
@@ -35,7 +36,7 @@ CREATE TABLE Supervisor (
 
 CREATE TABLE Papel (
     Id SERIAL PRIMARY KEY,
-    Descricao VARCHAR(50) NOT NULL
+    Descricao VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE RegistroAcesso (
@@ -75,7 +76,7 @@ CREATE TABLE Advertencia (
 
 COMMIT;
 
---populando com os dados
+-- popula
 
 SET session_replication_role = 'replica';
 
