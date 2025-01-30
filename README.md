@@ -28,5 +28,6 @@ O repositório está organizado em pastas que representam as etapas do projeto r
 - **`02 MER do Projeto em Equipe`**: Modelagem Entidade-Relacionamento (MER) desenvolvida para representar as entidades e seus relacionamentos.  
 - **`03 Mapeamento do Projeto em Equipe`**: Transformação do MER em texto e [tabelas relacionais](https://erd.dbdesigner.net/designer/schema/1731010836-teste), detalhando atributos, chaves primárias e estrangeiras.  
 - **`04 Álgebra e/ou Cálculo Relacional do Projeto em Equipe`**: Expressões de álgebra relacional ou cálculo relacional utilizadas para realizar consultas e operações no modelo relacional.
+- **`DDL e DML do projeto`**: Criação das tabelas, polulação dos dados e algumas consultado do banco em SQL.
 
 
