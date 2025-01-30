@@ -1,4 +1,7 @@
+BEGIN;
+
 -- criacao das tabelas
+
 CREATE TABLE Estudante (
     Id SERIAL PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,
@@ -9,7 +12,8 @@ CREATE TABLE Estudante (
     Telefone VARCHAR(15)
 );
 
-CREATE TABLE Armario (
+CREATE INDEX MATRICULA_IDX ON Estudante (Matricula);
+    CREATE TABLE Armario (
     Id SERIAL PRIMARY KEY,
     Localizacao VARCHAR(50) NOT NULL,
     Status BOOLEAN NOT NULL DEFAULT TRUE
@@ -43,6 +47,8 @@ CREATE TABLE RegistroAcesso (
     IdEstudante INTEGER REFERENCES Estudante(Id)
 );
 
+CREATE INDEX HORARIO_INICIO_IDX ON RegistroAcesso (HorarioInicio);
+
 CREATE TABLE Escala (
     Id SERIAL PRIMARY KEY,
     HorarioInicio TIMESTAMP NOT NULL,
@@ -66,6 +72,8 @@ CREATE TABLE Advertencia (
     EstudanteId INTEGER REFERENCES Estudante(Id),
     SupervisorId INTEGER REFERENCES Supervisor(Id)
 );
+
+COMMIT;
 
 --populando com os dados
 
