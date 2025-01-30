@@ -1,0 +1,17 @@
+-- nome dos estudantes que cursam Ciência da Computação
+-- π Nome (σ Estudante.Curso = 'Ciência da Computação' (Estudante))
+
+-- seleção das localizações dos armários disponíveis
+-- π Localizacao (σ Armario.Status = false (Armario))
+
+-- Quais horarios de entrada do estudante de matrícula 20230004?
+-- π HorarioInicio ((RegistroAcesso) ⟖ (σ Estudante.Matricula = '20230004' (Estudante)))
+
+-- Todos os estudantes que usaram os armários dentro de um determinado período de 24 horas:
+-- π Nome ((σ HorarioInicio ≥ '2024-11-28 00:00:00' ∧ HorarioSaida ≤ '2024-11-28 23:59:59' (RegistroAcesso)) ⟖ RegistroAcesso.IdEstudante = Id Estudante)
+
+-- Quais computadores estão disponíveis
+-- π Computador.Localizacao (σ (Status) = 'Disponivel' (Computador))
+
+-- O estudante de matrícula 20230002 é também supervisor? Se sim, retorne seu e-mail
+-- π Estudante.Email ((Supervisor) ⟖ (σ Estudante.Matricula = '20230002'(Estudante)))
